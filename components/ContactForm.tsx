@@ -1,13 +1,35 @@
 "use client";
 import { useState } from "react";
 
-export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+const FORMSPREE_URL = "https://formspree.io/f/xaqgpwye";
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+export default function ContactForm() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("sending");
-    setTimeout(() => setStatus("sent"), 1200);
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setStatus("sent");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -70,6 +92,31 @@ export default function ContactForm() {
                 <h3 className="text-lg font-bold mb-2" style={{ color: "#0D1F3C" }}>Message sent!</h3>
                 <p className="text-sm" style={{ color: "#6B7280" }}>We&apos;ll get back to you within 24 hours.</p>
               </div>
+            ) : status === "error" ? (
+              <div
+                className="h-full flex flex-col items-center justify-center text-center py-16 rounded-2xl"
+                style={{ border: "1px solid #FCA5A5", backgroundColor: "#FFF5F5" }}
+              >
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center mb-4"
+                  style={{ backgroundColor: "#FEE2E2" }}
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#DC2626" strokeWidth="2.5" strokeLinecap="round" className="w-6 h-6">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                </div>
+                <h3 className="text-lg font-bold mb-2" style={{ color: "#0D1F3C" }}>Something went wrong</h3>
+                <p className="text-sm mb-4" style={{ color: "#6B7280" }}>Please try again or email us directly.</p>
+                <button
+                  onClick={() => setStatus("idle")}
+                  className="text-sm font-semibold underline"
+                  style={{ color: "#1B3D6F" }}
+                >
+                  Try again
+                </button>
+              </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
                 <div className="grid sm:grid-cols-2 gap-5">
@@ -79,6 +126,7 @@ export default function ContactForm() {
                     </label>
                     <input
                       type="text"
+                      name="name"
                       required
                       placeholder="Your full name"
                       className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all"
@@ -97,6 +145,7 @@ export default function ContactForm() {
                     </label>
                     <input
                       type="email"
+                      name="email"
                       required
                       placeholder="you@company.com"
                       className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all"
@@ -116,6 +165,7 @@ export default function ContactForm() {
                   </label>
                   <input
                     type="text"
+                    name="company"
                     placeholder="Your company name"
                     className="w-full px-4 py-3 rounded-xl text-sm outline-none transition-all"
                     style={{
@@ -132,6 +182,7 @@ export default function ContactForm() {
                     Message *
                   </label>
                   <textarea
+                    name="message"
                     required
                     rows={5}
                     placeholder="Tell us about your project, goals, and timeline..."
