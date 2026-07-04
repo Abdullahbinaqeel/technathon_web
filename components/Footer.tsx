@@ -27,15 +27,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 pb-12 border-b border-white/10">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center mb-6">
+            <Link href="/" className="flex items-center gap-2.5 mb-6">
               <Image
-                src="/logo.png"
-                alt="Technathon"
-                width={161}
-                height={58}
-                className="h-7 w-auto"
+                src="/logo-mark.png"
+                alt=""
+                width={64}
+                height={64}
+                className="h-8 w-8"
                 style={{ filter: "invert(1)", mixBlendMode: "screen" }}
               />
+              <span className="font-semibold text-base tracking-tight">Technathon</span>
             </Link>
             <p className="text-sm text-white/50 leading-relaxed max-w-xs">
               A full-service software engineering firm building robust digital

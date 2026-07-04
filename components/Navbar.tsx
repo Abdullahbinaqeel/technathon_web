@@ -17,8 +17,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-[68px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
-            <Image src="/logo.png" alt="Technathon" width={161} height={58} className="h-6 lg:h-7 w-auto" priority />
+          <Link href="/" className="flex items-center gap-2.5 shrink-0">
+            <Image src="/logo-mark.png" alt="" width={64} height={64} className="h-7 w-7 lg:h-8 lg:w-8" priority />
+            <span className="font-semibold text-[15px] tracking-tight" style={{ color: "#0D1F3C" }}>
+              Technathon
+            </span>
           </Link>
 
           {/* Desktop Nav */}
