@@ -252,21 +252,14 @@ export default function Hero() {
 
       {/* ── Right: illustration panel ── */}
       <div className="hidden lg:flex lg:w-[48%] xl:w-[46%] relative overflow-hidden items-center justify-center">
-        {/* Ambient gradient blobs */}
+        {/* Ambient gradient mesh */}
         <div
-          className="absolute -top-16 -right-10 w-[420px] h-[420px] rounded-full pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            background: "radial-gradient(circle, rgba(59,111,191,0.28) 0%, rgba(59,111,191,0) 70%)",
-            filter: "blur(10px)",
-            animation: "blobDrift1 16s ease-in-out infinite",
-          }}
-        />
-        <div
-          className="absolute bottom-[-8%] left-[-6%] w-[360px] h-[360px] rounded-full pointer-events-none"
-          style={{
-            background: "radial-gradient(circle, rgba(34,184,207,0.24) 0%, rgba(34,184,207,0) 70%)",
-            filter: "blur(10px)",
-            animation: "blobDrift2 20s ease-in-out infinite",
+            background:
+              "radial-gradient(600px 500px at 82% 8%, rgba(59,111,191,0.16) 0%, rgba(59,111,191,0) 60%), " +
+              "radial-gradient(500px 460px at 8% 96%, rgba(34,184,207,0.14) 0%, rgba(34,184,207,0) 60%)",
+            animation: "meshShift 18s ease-in-out infinite",
           }}
         />
 
