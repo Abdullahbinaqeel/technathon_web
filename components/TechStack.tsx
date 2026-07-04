@@ -40,7 +40,7 @@ function MarqueeRow({
   duration,
   reverse = false,
 }: {
-  items: (typeof row1);
+  items: { text: string; cat: keyof typeof catStyle }[];
   duration: number;
   reverse?: boolean;
 }) {
