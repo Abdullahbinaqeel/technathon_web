@@ -151,18 +151,6 @@ export default function Hero() {
         <div className="w-full px-8 lg:pl-16 xl:pl-24 lg:pr-8 py-16 lg:py-0 lg:min-h-[calc(100vh-68px)] flex items-center">
           <div className="max-w-xl w-full">
 
-            {/* Eyebrow */}
-            <div
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full mb-8"
-              style={{
-                border: "1px solid #E5E7EB",
-                backgroundColor: "#F5F5F3",
-                animation: "fadeSlideUp 0.6s ease forwards 0.1s",
-                opacity: 0,
-              }}
-            >
-            </div>
-
             {/* Headline */}
             <h1
               className="font-bold leading-[1.06] tracking-tight mb-6"
