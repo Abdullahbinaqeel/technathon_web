@@ -9,13 +9,13 @@ const differentiators = [
     number: "02",
     title: "Outcomes over output.",
     description:
-      "We measure success by business results — conversion rates, uptime, revenue impact — not lines of code or tickets closed. Your KPIs are our KPIs.",
+      "We measure success by business results, like conversion rates, uptime, and revenue impact, not lines of code or tickets closed. Your KPIs are our KPIs.",
   },
   {
     number: "03",
     title: "Full ownership, zero ambiguity.",
     description:
-      "One point of accountability from kickoff to production. We own the architecture, the delivery, and the quality — no diffusion of responsibility across vendors.",
+      "One point of accountability from kickoff to production. We own the architecture, the delivery, and the quality, with no diffusion of responsibility across vendors.",
   },
   {
     number: "04",

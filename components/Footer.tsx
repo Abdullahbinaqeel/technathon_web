@@ -12,7 +12,7 @@ const footerLinks = {
   ],
   Company: ["About", "Careers", "Blog", "Case Studies", "Partners"],
   Contact: [
-    "abdulbinaqeel@gmail.com",
+    "technathon.support@gmail.com",
     "+1 (555) 000-0000",
     "New York, NY",
     "Lahore, Pakistan",

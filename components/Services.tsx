@@ -3,7 +3,7 @@ const services = [
     number: "01",
     title: "Custom Software Development",
     description:
-      "From web platforms to enterprise systems — we build software tailored to your exact requirements, using the right architecture for your scale.",
+      "From web platforms to enterprise systems, we build software tailored to your exact requirements, using the right architecture for your scale.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
         <polyline points="16 18 22 12 16 6" />
@@ -62,7 +62,7 @@ const services = [
     number: "06",
     title: "Quality Assurance & Testing",
     description:
-      "Comprehensive QA strategies — automated and manual — that ensure your software is reliable, performant, and production-ready.",
+      "Comprehensive QA strategies, both automated and manual, that ensure your software is reliable, performant, and production-ready.",
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-5 h-5">
         <polyline points="9 11 12 14 22 4" />

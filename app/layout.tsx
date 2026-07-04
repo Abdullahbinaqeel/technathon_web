@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 const title =
-  "Technathon | Digital Transformation Partners — Custom Software, AI & Web Development";
+  "Technathon | Digital Transformation Partners for Custom Software, AI & Web Development";
 const description =
   "Technathon is your digital transformation partner, empowering enterprises with custom software development, applied AI, and web development built to scale.";
 

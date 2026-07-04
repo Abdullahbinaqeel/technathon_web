@@ -48,13 +48,13 @@ export default function ContactForm() {
               conversation.
             </h2>
             <p className="text-base leading-relaxed mb-10" style={{ color: "#6B7280" }}>
-              Tell us about your project. We respond within 24 hours — no sales
+              Tell us about your project. We respond within 24 hours, no sales
               call required, just a direct conversation with an engineer.
             </p>
 
             <div className="flex flex-col gap-5">
               {[
-                { icon: "✉", label: "Email", value: "abdulbinaqeel@gmail.com" },
+                { icon: "✉", label: "Email", value: "technathon.support@gmail.com" },
                 { icon: "📍", label: "Location", value: "Remote-first · Worldwide" },
                 { icon: "⏱", label: "Response time", value: "Within 24 hours" },
               ].map((item) => (

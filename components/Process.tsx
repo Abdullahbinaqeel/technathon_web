@@ -3,7 +3,7 @@ const steps = [
     number: "01",
     title: "Discover",
     description:
-      "We start by deeply understanding your business, users, constraints, and goals. No assumptions — just rigorous listening and structured problem framing.",
+      "We start by deeply understanding your business, users, constraints, and goals. No assumptions, just rigorous listening and structured problem framing.",
   },
   {
     number: "02",
@@ -21,7 +21,7 @@ const steps = [
     number: "04",
     title: "Scale",
     description:
-      "We don't disappear at launch. We optimize for growth — performance tuning, infrastructure scaling, and ongoing product evolution as your business demands.",
+      "We don't disappear at launch. We optimize for growth: performance tuning, infrastructure scaling, and ongoing product evolution as your business demands.",
   },
 ];
 

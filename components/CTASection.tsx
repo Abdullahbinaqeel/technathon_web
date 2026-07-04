@@ -11,7 +11,7 @@ export default function CTASection() {
           </h2>
           <p className="text-base leading-relaxed mb-8" style={{ color: "#6B7280" }}>
             Tell us about your project and we will get back to you within 24 hours.
-            No sales call required — just a direct conversation with an engineer.
+            No sales call required, just a direct conversation with an engineer.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -25,11 +25,11 @@ export default function CTASection() {
               </svg>
             </a>
             <a
-              href="mailto:abdulbinaqeel@gmail.com"
+              href="mailto:technathon.support@gmail.com"
               className="inline-flex items-center gap-1.5 text-sm font-medium group transition-opacity hover:opacity-70"
               style={{ color: "#6B7280" }}
             >
-              abdulbinaqeel@gmail.com
+              technathon.support@gmail.com
               <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
             </a>
           </div>

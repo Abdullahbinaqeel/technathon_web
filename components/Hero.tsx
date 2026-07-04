@@ -161,7 +161,6 @@ export default function Hero() {
                 opacity: 0,
               }}
             >
-              <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "#1B3D6F" }} />
             </div>
 
             {/* Headline */}
@@ -196,7 +195,7 @@ export default function Hero() {
               style={{ color: "#6B7280", animation: "fadeSlideUp 0.6s ease forwards 0.65s", opacity: 0 }}
             >
               Technathon is a full-service engineering firm helping companies
-              design, build, and scale digital products — with precision and
+              design, build, and scale digital products with precision and
               purpose.
             </p>
 

@@ -12,13 +12,32 @@ export default function Navbar() {
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50"
-      style={{ backgroundColor: "#FFFFFF", borderBottom: "1px solid #E5E7EB" }}
+      style={{
+        background: "linear-gradient(90deg, #E4EEFB 0%, #F1F7FD 55%, #FFFFFF 100%)",
+        borderBottom: "1px solid #E5E7EB",
+      }}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-[68px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5 shrink-0">
-            <Image src="/logo-mark.png" alt="" width={64} height={64} className="h-7 w-7 lg:h-8 lg:w-8" priority />
+            <div
+              className="flex items-center justify-center rounded-xl w-9 h-9 lg:w-10 lg:h-10 shrink-0"
+              style={{
+                background: "linear-gradient(135deg, #0D1F3C 0%, #1B3D6F 100%)",
+                boxShadow: "0 2px 6px rgba(13, 31, 60, 0.25)",
+              }}
+            >
+              <Image
+                src="/logo-mark.png"
+                alt=""
+                width={64}
+                height={64}
+                className="h-5 w-5 lg:h-[22px] lg:w-[22px]"
+                style={{ filter: "invert(1)", mixBlendMode: "screen" }}
+                priority
+              />
+            </div>
             <span className="font-semibold text-[15px] tracking-tight" style={{ color: "#0D1F3C" }}>
               Technathon
             </span>
