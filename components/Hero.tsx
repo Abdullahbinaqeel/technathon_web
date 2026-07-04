@@ -162,9 +162,6 @@ export default function Hero() {
               }}
             >
               <span className="w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: "#1B3D6F" }} />
-              <span className="text-[10px] font-semibold uppercase tracking-[0.2em]" style={{ color: "#6B7280" }}>
-                IT Consulting &amp; Software Engineering
-              </span>
             </div>
 
             {/* Headline */}
