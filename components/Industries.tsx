@@ -55,7 +55,7 @@ export default function Industries() {
             {industries.map((industry, i) => (
               <div
                 key={industry.name}
-                className={`py-7 pr-8 border-b border-border ${
+                className={`py-7 pl-8 pr-8 border-b border-border ${
                   i % 2 === 0 ? "sm:border-r sm:border-border" : ""
                 }`}
               >
