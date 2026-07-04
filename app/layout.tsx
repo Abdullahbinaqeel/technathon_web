@@ -9,10 +9,34 @@ const inter = Inter({
   display: "swap",
 });
 
+const title =
+  "Technathon | Digital Transformation Partners — Custom Software, AI & Web Development";
+const description =
+  "Technathon is your digital transformation partner, empowering enterprises with custom software development, applied AI, and web development built to scale.";
+
 export const metadata: Metadata = {
-  title: "Technathon — Engineering Solutions That Scale",
-  description:
-    "Technathon is a full-service software engineering firm helping companies design, build, and scale digital products — with precision and purpose.",
+  title,
+  description,
+  keywords: [
+    "digital transformation partner",
+    "custom software development",
+    "applied AI development",
+    "AI software company",
+    "web development company",
+    "enterprise software solutions",
+    "software engineering firm",
+  ],
+  openGraph: {
+    title,
+    description,
+    type: "website",
+    siteName: "Technathon",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+  },
 };
 
 export default function RootLayout({

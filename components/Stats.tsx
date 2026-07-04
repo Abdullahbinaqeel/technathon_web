@@ -23,7 +23,7 @@ const statsData = [
   { target: 200, suffix: "+",    label: "Projects Delivered" },
   { target: 85,  suffix: "+",    label: "Active Clients" },
   { target: 12,  suffix: "+",    label: "Countries Served" },
-  { target: 8,   suffix: " Yrs", label: "Industry Experience" },
+  { target: 4,   suffix: " Yrs", label: "Industry Experience" },
 ];
 
 function StatItem({ stat, active, index }: { stat: typeof statsData[0]; active: boolean; index: number }) {
