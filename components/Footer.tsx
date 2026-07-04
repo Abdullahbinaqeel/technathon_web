@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   Services: [
@@ -26,19 +27,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr_1fr_1fr] gap-12 pb-12 border-b border-white/10">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-3 mb-6">
-              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center shrink-0">
-                <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 text-white">
-                  <path
-                    d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <span className="font-semibold text-base tracking-tight">Technathon</span>
+            <Link href="/" className="flex items-center mb-6">
+              <Image
+                src="/logo.png"
+                alt="Technathon"
+                width={161}
+                height={58}
+                className="h-7 w-auto"
+                style={{ filter: "invert(1)", mixBlendMode: "screen" }}
+              />
             </Link>
             <p className="text-sm text-white/50 leading-relaxed max-w-xs">
               A full-service software engineering firm building robust digital

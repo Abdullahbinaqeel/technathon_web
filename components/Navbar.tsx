@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = ["Services", "Work", "Process", "About"];
 
@@ -16,16 +17,8 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-[68px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: "#0D1F3C" }}>
-              <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4 text-white">
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"
-                  stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <span className="font-semibold text-[15px] tracking-tight" style={{ color: "#0D1F3C" }}>
-              Technathon
-            </span>
+          <Link href="/" className="flex items-center shrink-0">
+            <Image src="/logo.png" alt="Technathon" width={161} height={58} className="h-6 lg:h-7 w-auto" priority />
           </Link>
 
           {/* Desktop Nav */}
