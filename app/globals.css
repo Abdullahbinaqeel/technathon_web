@@ -55,6 +55,18 @@ html {
   to   { transform: translateX(0); }
 }
 
+@keyframes blobDrift1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(6%, 8%) scale(1.12); }
+  66%      { transform: translate(-4%, 5%) scale(0.95); }
+}
+
+@keyframes blobDrift2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%      { transform: translate(-8%, -6%) scale(0.9); }
+  66%      { transform: translate(5%, -4%) scale(1.1); }
+}
+
 .marquee-track:hover { animation-play-state: paused; }
 .no-scrollbar::-webkit-scrollbar { display: none; }
 .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }

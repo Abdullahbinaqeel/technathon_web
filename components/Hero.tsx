@@ -41,6 +41,25 @@ const bars = [
 function DashboardIllustration() {
   return (
     <svg viewBox="0 0 460 480" fill="none" className="w-full max-h-[420px]">
+      <defs>
+        <linearGradient id="chartLine" x1="50" y1="0" x2="390" y2="0" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#1B3D6F" />
+          <stop offset="55%" stopColor="#3B6FBF" />
+          <stop offset="100%" stopColor="#22B8CF" />
+        </linearGradient>
+        <linearGradient id="chartFill" x1="0" y1="103" x2="0" y2="220" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#3B6FBF" stopOpacity="0.35" />
+          <stop offset="100%" stopColor="#3B6FBF" stopOpacity="0" />
+        </linearGradient>
+        <linearGradient id="tooltipGrad" x1="296" y1="76" x2="368" y2="104" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#1B3D6F" />
+          <stop offset="100%" stopColor="#0D1F3C" />
+        </linearGradient>
+        <linearGradient id="barGrad" x1="0" y1="274" x2="0" y2="354" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stopColor="#22B8CF" />
+          <stop offset="100%" stopColor="#1B3D6F" />
+        </linearGradient>
+      </defs>
       {/* Main card */}
       <rect x="20" y="28" width="370" height="228" rx="14"
         fill="white" stroke="#E5E7EB" strokeWidth="1.5"
@@ -52,25 +71,25 @@ function DashboardIllustration() {
       {/* Chart area fill */}
       <path
         d="M50,220 L88,184 L126,199 L162,153 L200,169 L238,128 L278,147 L318,103 L358,119 L390,106 L390,220 Z"
-        fill="#EBF0F8" fillOpacity="0.7" />
+        fill="url(#chartFill)" />
       {/* Chart line */}
       <path
         d="M50,220 L88,184 L126,199 L162,153 L200,169 L238,128 L278,147 L318,103 L358,119 L390,106"
-        stroke="#1B3D6F" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+        stroke="url(#chartLine)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
         strokeDasharray="720"
         style={{ strokeDashoffset: 720, animation: "drawLine 2.4s cubic-bezier(.4,0,.2,1) forwards 0.7s" }} />
-      <circle cx="162" cy="153" r="4" fill="#1B3D6F"
+      <circle cx="162" cy="153" r="4" fill="#3B6FBF"
         style={{ animation: "fadeSlideUp 0.3s ease forwards 2.0s", opacity: 0 }} />
-      <circle cx="238" cy="128" r="4" fill="#1B3D6F"
+      <circle cx="238" cy="128" r="4" fill="#3B6FBF"
         style={{ animation: "fadeSlideUp 0.3s ease forwards 2.2s", opacity: 0 }} />
       {/* Highlight point */}
-      <circle cx="318" cy="103" r="10" fill="none" stroke="#1B3D6F" strokeOpacity="0.25" strokeWidth="1.5"
+      <circle cx="318" cy="103" r="10" fill="none" stroke="#22B8CF" strokeOpacity="0.3" strokeWidth="1.5"
         style={{ transformBox: "fill-box", transformOrigin: "center", animation: "ringPulse 2s ease-out infinite 2.8s", opacity: 0 }} />
-      <circle cx="318" cy="103" r="5" fill="#1B3D6F"
+      <circle cx="318" cy="103" r="5" fill="#22B8CF"
         style={{ animation: "fadeSlideUp 0.3s ease forwards 2.4s", opacity: 0 }} />
       {/* Tooltip */}
       <rect x="296" y="76" width="72" height="28" rx="6"
-        fill="#0D1F3C" stroke="#0D1F3C" strokeWidth="0"
+        fill="url(#tooltipGrad)" strokeWidth="0"
         style={{ animation: "fadeSlideUp 0.4s ease forwards 2.6s", opacity: 0 }} />
       <text x="332" y="95" textAnchor="middle" fill="white" fontSize="9" fontWeight="600"
         style={{ animation: "fadeSlideUp 0.4s ease forwards 2.6s", opacity: 0 }}>+24.3%</text>
@@ -94,7 +113,7 @@ function DashboardIllustration() {
       {bars.map(({ x, h, delay, op }) => (
         <rect key={x}
           x={x} y={334 - h} width="10" height={h} rx="2"
-          fill="#1B3D6F" fillOpacity={op}
+          fill="url(#barGrad)" fillOpacity={op}
           style={{
             transformBox: "fill-box" as const,
             transformOrigin: "bottom center",
@@ -233,6 +252,24 @@ export default function Hero() {
 
       {/* ── Right: illustration panel ── */}
       <div className="hidden lg:flex lg:w-[48%] xl:w-[46%] relative overflow-hidden items-center justify-center">
+        {/* Ambient gradient blobs */}
+        <div
+          className="absolute -top-16 -right-10 w-[420px] h-[420px] rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(59,111,191,0.28) 0%, rgba(59,111,191,0) 70%)",
+            filter: "blur(10px)",
+            animation: "blobDrift1 16s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="absolute bottom-[-8%] left-[-6%] w-[360px] h-[360px] rounded-full pointer-events-none"
+          style={{
+            background: "radial-gradient(circle, rgba(34,184,207,0.24) 0%, rgba(34,184,207,0) 70%)",
+            filter: "blur(10px)",
+            animation: "blobDrift2 20s ease-in-out infinite",
+          }}
+        />
+
         {/* Subtle vertical divider */}
         <div className="absolute left-0 top-[10%] bottom-[10%] w-px" style={{ backgroundColor: "#E5E7EB" }} />
 
